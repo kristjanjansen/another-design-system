@@ -73,3 +73,18 @@ export type TextProps = {
   uppercase?: boolean;
   dangerouslySetInnerHTML?: any;
 };
+
+// Label types
+
+export type LabelSize = "tiny" | "small" | "default" | "large";
+
+export type LabelProps = {
+  id?: string;
+  size?: LabelSize;
+  children: React.ReactNode;
+  className?: string;
+  italic?: boolean;
+  underline?: boolean;
+  weight?: "400" | "600";
+  uppercase?: boolean;
+};

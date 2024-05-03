@@ -3,9 +3,28 @@ import React from "react";
 import { getMarginStyles } from "../_helpers/marginToCss";
 import { MarginProps, HeadingProps } from "../_types/types";
 
-import { getDefaultTag } from "./helpers";
-
 import styles from "./Heading.module.scss";
+
+function getDefaultTag(variant: string): string {
+  switch (variant) {
+    case "h1":
+    case "h2":
+    case "h3":
+    case "h4":
+    case "h5":
+    case "h6":
+    case "p":
+    case "ol":
+    case "ul":
+      return variant;
+    case "line":
+      return "p";
+    case "list":
+      return "ol";
+    default:
+      return "div";
+  }
+}
 
 export const Heading: React.FC<MarginProps & HeadingProps> = ({
   id,
