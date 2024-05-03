@@ -1,0 +1,68 @@
+@import '../_helpers/mixins';
+
+// Paragraph (p)
+.text-p-small {
+    @include text-p-small;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-p-default {
+    @include text-p-default;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-p-large {
+    @include text-p-large;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+// Line
+.text-line-tiny {
+    @include text-line-tiny;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-line-small {
+    @include text-line-small;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-line-default {
+    @include text-line-default;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-line-large {
+    @include text-line-large;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+// List
+.text-list-default {
+    @include text-list-default;
+
+    a {
+        text-decoration: underline;
+    }
+}

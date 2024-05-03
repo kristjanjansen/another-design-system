@@ -1,0 +1,86 @@
+import { Heading } from '../../../components';
+
+# Heading
+
+## Usage
+
+```jsx
+import { Heading } from 'another-design-system'
+```
+
+## Variants
+
+```tsx
+<Heading variant="display">Heading variant display</Heading>
+<Heading variant="h1">Heading variant h1</Heading>
+<Heading variant="h2">Heading variant h2</Heading>
+<Heading variant="h3">Heading variant h3</Heading>
+<Heading variant="h4">Heading variant h4</Heading>
+<Heading variant="h5">Heading variant h5</Heading>
+<Heading variant="h6">Heading variant h6</Heading>
+<Heading variant="leadtext">Heading variant leadtext</Heading>
+<Heading variant="subheadline">Heading variant subheadline</Heading>
+```
+
+<Heading variant="display">Heading variant display</Heading>
+<Heading variant="h1">Heading variant h1</Heading>
+<Heading variant="h2">Heading variant h2</Heading>
+<Heading variant="h3">Heading variant h3</Heading>
+<Heading variant="h4">Heading variant h4</Heading>
+<Heading variant="h5">Heading variant h5</Heading>
+<Heading variant="h6">Heading variant h6</Heading>
+<Heading variant="leadtext">Heading variant leadtext</Heading>
+<Heading variant="subheadline">Heading variant subheadline</Heading>
+
+## Weights
+
+You can set the heading either to have a default semibold weight (600) or medium weight (400). 
+
+```tsx
+<Heading variant="h2" weight="600">Heading weight 600</Heading>
+<Heading variant="h2" weight="400">Heading weight 400</Heading>
+```
+
+<Heading variant="h2" weight="600">Heading weight 600</Heading>
+<Heading variant="h2" weight="400">Heading weight 400</Heading>
+
+## Element name
+
+You can set the heading to be rendered as a different HTML element for example for SEO reasons. Here's how to display a h6 size heading as a `<h3>` HTML element:
+
+```tsx
+<Heading variant="h6" as="h5">h3 looking as h6</Heading>
+```
+
+<Heading variant="h6" as="h5">h3 looking as h6</Heading>
+
+## More options
+
+Headings support more options for styling:
+
+```tsx
+<Heading variant="h6" italic>Italic header</Heading>
+<Heading variant="h6" underline>Underline header</Heading>
+<Heading variant="h6" uppercase>Uppercase header</Heading>
+```
+
+<Heading variant="h6" italic>Italic header</Heading>
+<Heading variant="h6" underline>Underline header</Heading>
+<Heading variant="h6" uppercase>Uppercase header</Heading>
+
+## CSS styling 
+
+You can apply addional styling to the heading by passing a `className` prop:
+
+
+```tsx
+<Heading
+    className="text-[var(--eds-colour-static-text-on-basic-accent)]"
+    variant="subheadline"
+    uppercase
+>
+    Coloured uppercase subheadline
+</Heading>
+```
+
+<Heading className="text-[var(--eds-colour-static-text-on-basic-accent)]" variant="subheadline" uppercase>Coloured uppercase subheadline</Heading>

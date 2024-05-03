@@ -8,10 +8,16 @@ import "../styles/vars.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="grid grid-cols-[300px_auto] gap-8 h-screen">
-      <div className="border-r-1 border-eds-color-global-neutral-200 p-8">
+    <div className="grid grid-cols-[250px_auto] gap-8 h-screen">
+      <div className="border-r border-gray-200 p-8 text-neutral-500">
         <Link href="/">
-          <h1 className="font-bold text-4xl mb-6">EDS</h1>
+          <h1 className="font-bold text-3xl mb-6">
+            Another
+            <br />
+            Design
+            <br />
+            System
+          </h1>
         </Link>
         <div>
           {menu.map((section, i) => (
@@ -19,9 +25,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h2 className="font-semibold mb-2" key={i}>
                 {section.title}
               </h2>
-              <div className="mb-8">
+              <div className="mb-8 flex flex-col gap-2">
                 {section.items.map((item, j) => (
-                  <Link key={j} href={item.file}>
+                  <Link key={j} href={item.file} className="block">
                     {item.title}
                   </Link>
                 ))}
@@ -30,7 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           ))}
         </div>
       </div>
-      <div className="p-8">{children}</div>
+      <div className="p-8 pb-32">{children}</div>
     </div>
   );
 }

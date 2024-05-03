@@ -1,6 +1,9 @@
 export const menu = [
   {
     title: "Components",
-    items: [{ title: "Text", file: "/components/text" }],
+    items: [
+      { title: "Heading", file: "/components/heading" },
+      { title: "Text", file: "/components/text" },
+    ],
   },
 ];
