@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="grid grid-cols-[250px_auto] gap-8 h-screen">
       <div className="border-r border-gray-200 p-8 text-neutral-500">
         <Link href="/">
-          <h1 className="font-bold text-3xl mb-6">
+          <h1 className="font-bold text-xl mb-6">
             Another
             <br />
             Design
