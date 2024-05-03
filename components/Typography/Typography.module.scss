@@ -1,0 +1,230 @@
+@import './mixins';
+
+// Heading
+.heading-h1 {
+    @include heading-h1-desktop;
+
+    @media (max-width: 1024px) {
+        @include heading-h1-mobile;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.heading-h2 {
+    @include heading-h2-desktop;
+
+    @media (max-width: 1024px) {
+        @include heading-h2-mobile;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.heading-h3 {
+    @include heading-h3-desktop;
+
+    @media (max-width: 1024px) {
+        @include heading-h3-mobile;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.heading-h4 {
+    @include heading-h4-desktop;
+
+    @media (max-width: 1024px) {
+        @include heading-h4-mobile;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.heading-h5 {
+    @include heading-h5-desktop;
+
+    @media (max-width: 1024px) {
+        @include heading-h5-mobile;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.heading-h6 {
+    @include heading-h6-desktop;
+
+    @media (max-width: 1024px) {
+        @include heading-h6-mobile;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.heading-display {
+    @include heading-display-desktop;
+
+    @media (max-width: 1024px) {
+        @include heading-display-mobile;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.heading-leadtext {
+    @include heading-leadtext-desktop;
+
+    @media (max-width: 1024px) {
+        @include heading-leadtext-mobile;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.heading-subheadline {
+    @include heading-subheadline-desktop;
+
+    @media (max-width: 1024px) {
+        @include heading-subheadline-mobile;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+// Paragraph (p)
+.text-p-small {
+    @include text-p-small;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-p-default {
+    @include text-p-default;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-p-large {
+    @include text-p-large;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+// Line
+.text-line-tiny {
+    @include text-line-tiny;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-line-small {
+    @include text-line-small;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-line-default {
+    @include text-line-default;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-line-large {
+    @include text-line-large;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+// List
+.text-list-default {
+    @include text-list-default;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+// Label
+.label-tiny {
+    @include label-tiny;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.label-small {
+    @include label-small;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.label-default {
+    @include label-default;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.label-large {
+    @include label-large;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-400 {
+    font-weight: 400;
+}
+
+.text-600 {
+    font-weight: 600;
+}
