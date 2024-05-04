@@ -24,10 +24,10 @@
   },
   "include": [
     "next-env.d.ts",
-    ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "app/components/button/page.mdx", "app/components/switch/page.mdx", "app/components/stack/page.mdx"  ],
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules"
   ]
