@@ -1,0 +1,44 @@
+@import '../../helpers/breakpoints';
+
+// Define gap sizes and their corresponding values
+$gap-sizes: (
+    1: var(--eds-spacing-small-4),
+    // xsmall
+    2: var(--eds-spacing-medium-1),
+    // small
+    3: var(--eds-spacing-medium-4),
+    // medium
+    4: var(--eds-spacing-medium-8),
+    // large
+);
+
+// Base stack class
+.stack {
+    display: flex;
+    gap: map-get($gap-sizes, 1); // Default gap
+    flex-direction: column; // Default direction
+    align-items: normal;
+}
+
+// Generate direction classes
+@each $breakpoint, $min-width in $breakpoints {
+    @media (min-width: $min-width) {
+        .direction-#{$breakpoint}-column {
+            flex-direction: column;
+        }
+        .direction-#{$breakpoint}-row {
+            flex-direction: row;
+        }
+    }
+}
+
+// Generate gap classes
+@each $breakpoint, $min-width in $breakpoints {
+    @each $size, $value in $gap-sizes {
+        @media (min-width: $min-width) {
+            .gap-#{$breakpoint}-#{$size} {
+                gap: $value;
+            }
+        }
+    }
+}

@@ -1,0 +1,146 @@
+@use '../../helpers/mixins' as *;
+
+.switch {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: var(--eds-spacing-small-4);
+
+    &__label {
+        display: flex;
+        align-items: center;
+        padding: var(--eds-spacing-small-1) 0px;
+    }
+
+    &__indicator {
+        @include transform-all(0.1s);
+        position: relative;
+        display: flex;
+        flex-shrink: 0;
+        width: 40px;
+        height: 24px;
+        // Compensate for border width
+        padding: calc(var(--eds-spacing-small-2) - 2px);
+        align-items: center;
+        border-radius: var(--eds-radius-full);
+        border: var(--eds-stroke-divider-strong) solid
+            var(--eds-colour-action-stroke-form-default);
+        background: var(--eds-colour-action-bg-form-default);
+
+        &::after {
+            @include transform-all(0.1s);
+            content: '';
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            border-radius: var(--eds-radius-full);
+            background-color: var(--eds-colour-action-icon-on-basic-default);
+            filter: drop-shadow(0px 1px 3px rgba(66, 66, 66, 0.12))
+                drop-shadow(0px 1px 8px rgba(66, 66, 66, 0.12));
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        .switch__indicator {
+            border: var(--eds-stroke-divider-strong) solid
+                var(--eds-colour-action-stroke-form-hover);
+            background: var(--eds-colour-action-bg-form-hover);
+
+            &::after {
+                background-color: var(--eds-colour-action-icon-on-basic-hover);
+            }
+        }
+    }
+
+    &--pressed {
+        .switch__indicator {
+            border: var(--eds-stroke-divider-strong) solid
+                var(--eds-colour-action-stroke-form-active) !important;
+            background: var(--eds-colour-action-bg-form-active) !important;
+        }
+    }
+
+    &--focused {
+        .switch__indicator {
+            @include focus-ring-small;
+            border: var(--eds-stroke-divider-strong) solid
+                var(--eds-colour-action-stroke-form-focus);
+            background: var(--eds-colour-action-bg-form-focus);
+
+            &::after {
+                background-color: var(--eds-colour-action-icon-on-basic-focus);
+            }
+        }
+    }
+
+    &--selected {
+        .switch__indicator {
+            border-color: var(--eds-colour-action-bg-accent-default);
+            background: var(--eds-colour-action-bg-accent-default);
+
+            &::after {
+                background-color: var(
+                    --eds-colour-static-icon-on-accent-alternative
+                );
+                transform: translateX(16px);
+            }
+        }
+
+        &:hover {
+            .switch__indicator {
+                border-color: var(--eds-colour-action-bg-accent-hover);
+                background: var(--eds-colour-action-bg-accent-hover);
+
+                &::after {
+                    background-color: var(
+                        --eds-colour-static-icon-on-accent-alternative
+                    );
+                }
+            }
+        }
+
+        &.switch--focused {
+            .switch__indicator {
+                border-color: var(--eds-colour-action-bg-accent-focus);
+                background: var(--eds-colour-action-bg-accent-focus);
+
+                &::after {
+                    background-color: var(
+                        --eds-colour-static-icon-on-accent-alternative
+                    );
+                }
+            }
+        }
+
+        &.switch--pressed {
+            .switch__indicator {
+                border-color: var(
+                    --eds-colour-action-bg-accent-active
+                ) !important;
+                background: var(
+                    --eds-colour-action-bg-accent-active
+                ) !important;
+
+                &::after {
+                    background-color: var(
+                        --eds-colour-static-icon-on-accent-alternative
+                    ) !important;
+                }
+            }
+        }
+    }
+}
+
+.messages {
+    padding-left: var(--eds-spacing-medium-8);
+
+    &__description {
+        &--regular {
+            color: var(--eds-colour-static-text-on-basic-supportive);
+        }
+
+        &--warning {
+            color: var(--eds-colour-static-text-warning-body);
+        }
+    }
+}
