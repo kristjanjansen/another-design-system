@@ -1,7 +1,7 @@
 import React from "react";
 
-import { getMarginStyles } from "../_helpers/marginToCss";
-import { MarginProps, TextProps } from "../_types/types";
+import { getMarginStyles } from "../../helpers/marginToCss";
+import { MarginProps, TextProps } from "../../types/types";
 
 import styles from "./Text.module.scss";
 

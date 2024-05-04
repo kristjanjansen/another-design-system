@@ -1,7 +1,7 @@
 import React from "react";
 
-import { getMarginStyles } from "../_helpers/marginToCss";
-import { MarginProps, HeadingProps } from "../_types/types";
+import { getMarginStyles } from "../../helpers/marginToCss";
+import { MarginProps, HeadingProps } from "../../types/types";
 
 import styles from "./Heading.module.scss";
 

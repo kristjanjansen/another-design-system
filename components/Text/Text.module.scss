@@ -1,4 +1,4 @@
-@import '../_helpers/mixins';
+@import '../../helpers/mixins';
 
 // Paragraph (p)
 .text-p-small {
@@ -65,4 +65,57 @@
     a {
         text-decoration: underline;
     }
+}
+
+// Label
+.label-tiny {
+    @include label-tiny;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.label-small {
+    @include label-small;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.label-default {
+    @include label-default;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.label-large {
+    @include label-large;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-400 {
+    font-weight: 400;
+}
+
+.text-600 {
+    font-weight: 600;
 }

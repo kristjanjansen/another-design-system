@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LabelProps } from "../_types/types";
+import { LabelProps } from "../../types/types";
 
 import styles from "./Label.module.scss";
 
