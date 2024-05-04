@@ -1,0 +1,36 @@
+@use '../../helpers/mixins' as *;
+
+.tooltip {
+    @include transform-all(0.1s);
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--eds-spacing-small-1) var(--eds-spacing-small-3);
+    border-radius: var(--eds-radius-small);
+    background: var(--eds-colour-static-bg-basic-invert-higher);
+    color: var(--eds-colour-static-text-on-basic-invert-headline);
+    font-size: var(--text-line-small-400-font-size);
+    font-weight: var(--text-line-small-400-font-weight);
+    line-height: var(--text-line-tiny-400-line-height);
+
+    &--appear {
+        opacity: 0;
+        top: 95%;
+    }
+
+    &--appear-done {
+        opacity: 1;
+        top: calc(100% + 4px);
+    }
+
+    &--exit {
+        opacity: 1;
+        top: calc(100% + 4px);
+    }
+
+    &--exit-active {
+        opacity: 0;
+        top: 95%;
+    }
+}

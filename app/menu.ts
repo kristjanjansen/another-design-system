@@ -2,6 +2,7 @@ export const menu = [
   {
     title: "Components",
     items: [
+      { title: "Button", file: "/components/button" },
       { title: "Heading", file: "/components/heading" },
       { title: "Label", file: "/components/label" },
       { title: "Stack", file: "/components/stack" },

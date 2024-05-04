@@ -1,0 +1,51 @@
+import { Button } from "../../../components"
+
+# Button
+
+## Usage
+
+```jsx
+import { Button } from 'another-design-system'
+```
+
+## Basic example
+
+```jsx
+<Button>Hello World</Button>
+```
+
+<Button>Hello World</Button>
+
+## Variant
+
+```tsx
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="tertiary">Tertiary</Button>
+<Button variant="alert">Alert</Button>
+```
+
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="tertiary">Tertiary</Button>
+<Button variant="alert">Alert</Button>
+
+## Button as a link
+
+Element `a` is usable only with regular button variant, not icon button and no tooltip.
+
+```tsx
+<Button element="a" href="https://google.com" target="_blank">Link to Google</Button>
+```
+
+<Button element="a" href="https://google.com" target="_blank">Link to Google</Button>
+
+## Integration with NextJS Link
+
+```tsx
+import Link from 'next/link';
+
+<Link href="/test" legacyBehavior passHref>
+    <Button element="a">Submit</Button>
+</Link>;
+```

@@ -1,0 +1,493 @@
+@use '../../helpers/mixins' as *;
+
+.base {
+    position: relative;
+    display: inline-flex;
+}
+
+.btn {
+    @include transform-all(0.1s);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: calc(var(--eds-spacing-small-5) - 2px)
+        calc(var(--eds-spacing-medium-2) - 2px);
+    gap: var(--eds-spacing-small-2);
+    border-radius: var(--eds-radius-full);
+    border: 2px solid transparent;
+    font-size: var(--text-line-default-600-font-size);
+    font-weight: var(--text-line-default-600-font-weight);
+    line-height: var(--text-line-default-600-line-height);
+    letter-spacing: var(--text-line-default-600-letter-spacing);
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    .label {
+        padding: var(--eds-spacing-small-1) 0;
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &--has-icons {
+        .label {
+            padding: var(--eds-spacing-small-1) var(--eds-spacing-small-2);
+        }
+    }
+
+    &--full-width {
+        width: 100%;
+    }
+
+    &--primary {
+        color: var(--eds-colour-action-text-button-primary-default);
+        background-color: var(--eds-colour-action-bg-button-primary-default);
+        border-color: var(--eds-colour-action-bg-button-primary-default);
+
+        &:hover {
+            background-color: var(--eds-colour-action-bg-button-primary-hover);
+            border-color: var(--eds-colour-action-bg-button-primary-hover);
+        }
+
+        &:focus {
+            background-color: var(--eds-colour-action-bg-button-primary-focus);
+            border-color: var(--eds-colour-action-bg-button-primary-focus);
+        }
+
+        // TODO: Needs better isPressed state
+        &:active {
+            background-color: var(--eds-colour-action-bg-button-primary-active);
+            border-color: var(--eds-colour-action-bg-button-primary-active);
+        }
+    }
+
+    &--secondary {
+        color: var(--eds-colour-action-text-button-secondary-default);
+        background-color: transparent;
+        border-color: var(--eds-colour-action-stroke-button-secondary-default);
+
+        &:hover {
+            background-color: var(
+                --eds-colour-action-bg-button-secondary-hover
+            );
+            border-color: var(
+                --eds-colour-action-stroke-button-secondary-hover
+            );
+        }
+
+        &:focus {
+            background-color: var(
+                --eds-colour-action-bg-button-secondary-focus
+            );
+            border-color: var(
+                --eds-colour-action-stroke-button-secondary-focus
+            );
+        }
+
+        &:active {
+            background-color: var(
+                --eds-colour-action-bg-button-secondary-active
+            );
+            border-color: var(
+                --eds-colour-action-stroke-button-secondary-active
+            );
+        }
+    }
+
+    &--tertiary {
+        color: var(--eds-colour-action-text-button-tertiary-default);
+        background-color: transparent;
+        border-color: transparent;
+
+        &:hover {
+            background-color: var(--eds-colour-action-bg-button-tertiary-hover);
+            border-color: var(--eds-colour-action-bg-button-tertiary-hover);
+        }
+
+        &:focus {
+            background-color: var(--eds-colour-action-bg-button-tertiary-focus);
+            border-color: var(--eds-colour-action-bg-button-tertiary-focus);
+        }
+
+        &:active {
+            background-color: var(
+                --eds-colour-action-bg-button-tertiary-active
+            );
+            border-color: var(--eds-colour-action-bg-button-tertiary-active);
+        }
+    }
+
+    &--alert {
+        color: var(--eds-colour-action-text-button-alert-default);
+        background-color: var(--eds-colour-action-bg-button-alert-default);
+        border-color: var(--eds-colour-action-bg-button-alert-default);
+
+        &:hover {
+            color: var(--eds-colour-action-text-button-alert-hover);
+            background-color: var(--eds-colour-action-bg-button-alert-hover);
+            border-color: var(--eds-colour-action-bg-button-alert-hover);
+        }
+
+        &:focus {
+            color: var(--eds-colour-action-text-button-alert-focus);
+            background-color: var(--eds-colour-action-bg-button-alert-focus);
+            border-color: var(--eds-colour-action-bg-button-alert-focus);
+        }
+
+        &:active {
+            color: var(--eds-colour-action-text-button-alert-active);
+            background-color: var(--eds-colour-action-bg-button-alert-active);
+            border-color: var(--eds-colour-action-bg-button-alert-active);
+        }
+    }
+
+    &--inverted {
+        &.btn--primary {
+            color: var(--eds-colour-action-text-button-invert-primary-default);
+            background-color: var(
+                --eds-colour-action-bg-button-invert-primary-default
+            );
+            border-color: var(
+                --eds-colour-action-bg-button-invert-primary-default
+            );
+
+            &:hover {
+                color: var(
+                    --eds-colour-action-text-button-invert-primary-hover
+                );
+                background-color: var(
+                    --eds-colour-action-bg-button-invert-primary-hover
+                );
+                border-color: var(
+                    --eds-colour-action-bg-button-invert-primary-hover
+                );
+            }
+
+            &:focus {
+                color: var(
+                    --eds-colour-action-text-button-invert-primary-focus
+                );
+                background-color: var(
+                    --eds-colour-action-bg-button-invert-primary-focus
+                );
+                border-color: var(
+                    --eds-colour-action-bg-button-invert-primary-focus
+                );
+            }
+
+            &:active {
+                color: var(
+                    --eds-colour-action-text-button-invert-primary-active
+                );
+                background-color: var(
+                    --eds-colour-action-bg-button-invert-primary-active
+                );
+                border-color: var(
+                    --eds-colour-action-bg-button-invert-primary-active
+                );
+            }
+        }
+
+        &.btn--secondary {
+            color: var(
+                --eds-colour-action-text-button-invert-secondary-default
+            );
+            background-color: transparent; // Assuming secondary invert might have transparent bg
+            border-color: var(
+                --eds-colour-action-stroke-button-invert-secondary-default
+            );
+
+            &:hover {
+                background-color: var(
+                    --eds-colour-action-bg-button-invert-secondary-hover
+                );
+                border-color: var(
+                    --eds-colour-action-stroke-button-invert-secondary-hover
+                );
+
+                svg {
+                    color: var(
+                        --eds-colour-action-icon-button-invert-secondary-hover
+                    );
+                }
+            }
+
+            &:focus {
+                background-color: var(
+                    --eds-colour-action-bg-button-invert-secondary-focus
+                );
+                border-color: var(
+                    --eds-colour-action-stroke-button-invert-secondary-focus
+                );
+
+                svg {
+                    color: var(
+                        --eds-colour-action-icon-button-invert-secondary-focus
+                    );
+                }
+            }
+
+            &:active {
+                background-color: var(
+                    --eds-colour-action-bg-button-invert-secondary-active
+                );
+                border-color: var(
+                    --eds-colour-action-stroke-button-invert-secondary-active
+                );
+
+                svg {
+                    color: var(
+                        --eds-colour-action-icon-button-invert-secondary-active
+                    );
+                }
+            }
+        }
+
+        &.btn--tertiary {
+            color: var(--eds-colour-action-text-button-invert-tertiary-default);
+            background-color: var(
+                --eds-colour-action-bg-button-invert-tertiary-hover
+            ); // Default state uses hover color for more contrast
+            border-color: var(
+                --eds-colour-action-bg-button-invert-tertiary-hover
+            );
+
+            &:hover {
+                color: var(
+                    --eds-colour-action-text-button-invert-tertiary-hover
+                );
+                background-color: var(
+                    --eds-colour-action-bg-button-invert-tertiary-hover
+                );
+                border-color: var(
+                    --eds-colour-action-bg-button-invert-tertiary-hover
+                );
+
+                svg {
+                    color: var(
+                        --eds-colour-action-icon-button-invert-tertiary-hover
+                    );
+                }
+            }
+
+            &:focus {
+                color: var(
+                    --eds-colour-action-text-button-invert-tertiary-focus
+                );
+                background-color: var(
+                    --eds-colour-action-bg-button-invert-tertiary-focus
+                );
+                border-color: var(
+                    --eds-colour-action-bg-button-invert-tertiary-focus
+                );
+
+                svg {
+                    color: var(
+                        --eds-colour-action-icon-button-invert-tertiary-focus
+                    );
+                }
+            }
+
+            &:active {
+                color: var(
+                    --eds-colour-action-text-button-invert-tertiary-active
+                );
+                background-color: var(
+                    --eds-colour-action-bg-button-invert-tertiary-active
+                );
+                border-color: var(
+                    --eds-colour-action-bg-button-invert-tertiary-active
+                );
+
+                svg {
+                    color: var(
+                        --eds-colour-action-icon-button-invert-tertiary-active
+                    );
+                }
+            }
+        }
+    }
+
+    &--icon-only {
+        padding: calc(var(--eds-spacing-small-5) - 2px);
+
+        &.btn--primary {
+            svg {
+                color: var(
+                    --eds-colour-action-icon-only-button-primary-default
+                );
+            }
+
+            &:hover svg {
+                color: var(--eds-colour-action-icon-only-button-primary-hover);
+            }
+
+            &:focus svg {
+                color: var(--eds-colour-action-icon-only-button-primary-focus);
+            }
+
+            &:active svg {
+                color: var(--eds-colour-action-icon-only-button-primary-active);
+            }
+        }
+
+        &.btn--secondary {
+            svg {
+                color: var(
+                    --eds-colour-action-icon-only-button-secondary-default
+                );
+            }
+
+            &:hover svg {
+                color: var(
+                    --eds-colour-action-icon-only-button-secondary-hover
+                );
+            }
+
+            &:focus svg {
+                color: var(
+                    --eds-colour-action-icon-only-button-secondary-focus
+                );
+            }
+
+            &:active svg {
+                color: var(
+                    --eds-colour-action-icon-only-button-secondary-active
+                );
+            }
+        }
+
+        &.btn--tertiary {
+            svg {
+                color: var(
+                    --eds-colour-action-icon-only-button-tertiary-default
+                );
+            }
+
+            &:hover svg {
+                color: var(--eds-colour-action-icon-only-button-tertiary-hover);
+            }
+
+            &:focus svg {
+                color: var(--eds-colour-action-icon-only-button-tertiary-focus);
+            }
+
+            &:active svg {
+                color: var(
+                    --eds-colour-action-icon-only-button-tertiary-active
+                );
+            }
+        }
+
+        &.btn--alert {
+            svg {
+                color: var(--eds-colour-action-icon-only-button-alert-default);
+            }
+
+            &:hover svg {
+                color: var(--eds-colour-action-icon-only-button-alert-hover);
+            }
+
+            &:focus svg {
+                color: var(--eds-colour-action-icon-only-button-alert-focus);
+            }
+
+            &:active svg {
+                color: var(--eds-colour-action-icon-only-button-alert-active);
+            }
+        }
+
+        &.btn--inverted {
+            &.btn--primary {
+                svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-primary-default
+                    );
+                }
+
+                &:hover svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-primary-hover
+                    );
+                }
+
+                &:focus svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-primary-focus
+                    );
+                }
+
+                &:active svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-primary-active
+                    );
+                }
+            }
+
+            &.btn--secondary {
+                svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-secondary-default
+                    );
+                }
+
+                &:hover svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-secondary-hover
+                    );
+                }
+
+                &:focus svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-secondary-focus
+                    );
+                }
+
+                &:active svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-secondary-active
+                    );
+                }
+            }
+
+            &.btn--tertiary {
+                svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-tertiary-default
+                    );
+                }
+
+                &:hover svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-tertiary-hover
+                    );
+                }
+
+                &:focus svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-tertiary-focus
+                    );
+                }
+
+                &:active svg {
+                    color: var(
+                        --eds-colour-action-icon-only-button-invert-tertiary-active
+                    );
+                }
+            }
+        }
+    }
+
+    &.focus-ring {
+        @include focus-ring-large;
+    }
+
+    &--inverted.focus-ring {
+        @include focus-ring-large-inverted;
+    }
+}
