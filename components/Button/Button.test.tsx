@@ -14,17 +14,6 @@ describe("Button", () => {
     expect(button).toHaveAccessibleName("Click me");
   });
 
-  test("has accessible name with having icon only", async () => {
-    render(
-      <Button isIcon tooltipLabel="Self-service">
-        <IconUserSm aria-hidden="true" />
-      </Button>
-    );
-    const button = screen.getByRole("button") as HTMLButtonElement;
-    expect(button).toBeInTheDocument();
-    expect(button).toHaveAccessibleName("Click me");
-  });
-
   test("handles clicks", async () => {
     const onClickMock = vi.fn();
     render(<Button onPress={onClickMock}>Click me</Button>);

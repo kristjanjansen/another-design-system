@@ -1,6 +1,6 @@
 import React from "react";
 
-import { getMarginStyles } from "../../helpers/marginToCss";
+import { getMarginStyles } from "../../utils/marginToCss";
 import { MarginProps, TextProps } from "../../types/types";
 
 import styles from "./Text.module.scss";
