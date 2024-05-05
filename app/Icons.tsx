@@ -1,14 +1,17 @@
 import * as icons from "../icons/index";
-console.log(icons);
 
-export default function Icons() {
+export default function Icons(props: any) {
   return (
-    <div className="grid grid-cols-10 gap-4 mt-4">
+    <div className="flex flex-wrap gap-4 mt-4">
       {Object.keys(icons)
-        .filter((icon) => icon.endsWith("Sm"))
+        .filter((icon) => icon.endsWith(props.size))
         .map((icon) => {
           const Icon = icons[icon];
-          return <Icon key={icon} />;
+          return (
+            <a key={icon} title={icon}>
+              <Icon />
+            </a>
+          );
         })}
     </div>
   );

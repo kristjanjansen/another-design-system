@@ -1,4 +1,5 @@
 import { Button } from "../../../components"
+import { IconUserSm, IconChevronRightSm } from "../../../icons"
 
 # Button
 
@@ -18,7 +19,7 @@ import { Button } from 'another-design-system'
 
 ## Variant
 
-```tsx
+```jsx
 <Button variant="primary">Primary</Button>
 <Button variant="secondary">Secondary</Button>
 <Button variant="tertiary">Tertiary</Button>
@@ -30,9 +31,38 @@ import { Button } from 'another-design-system'
 <Button variant="tertiary">Tertiary</Button>
 <Button variant="alert">Alert</Button>
 
-## Full width
+## Icon buttons
 
-```tsx
+### Icon on left
+
+```jsx
+<Button iconLeft={<IconUserSm aria-hidden="true" />}>Self-service</Button>
+```
+
+<Button iconLeft={<IconUserSm aria-hidden="true" />}>Self-service</Button>
+
+### Icon on right
+
+<Button iconRight={<IconChevronRightSm aria-hidden="true" />}>Self-service</Button>
+
+## Icon only button
+
+Note that `tooltipLabel` prop adds a visible tooltip  to the button, which is also used as `aria-describedby` for screen readers.
+
+```jsx
+<Button isIcon tooltipLabel = "Self-service">
+    <IconUserSm aria-hidden="true" />
+</Button>
+```
+
+<Button isIcon tooltipLabel = "Self-service">
+    <IconUserSm aria-hidden="true" />
+</Button>
+
+
+## Full width button
+
+```jsx
 <Button isFullWidth>Full width button</Button>
 ```
 
@@ -42,7 +72,7 @@ import { Button } from 'another-design-system'
 
 Element `a` is usable only with regular button variant, not icon button and no tooltip.
 
-```tsx
+```jsx
 <Button element="a" href="https://google.com" target="_blank">Link to Google</Button>
 ```
 
@@ -50,7 +80,7 @@ Element `a` is usable only with regular button variant, not icon button and no t
 
 ## Integration with NextJS Link
 
-```tsx
+```jsx
 import Link from 'next/link';
 
 <Link href="/test" legacyBehavior passHref>

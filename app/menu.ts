@@ -12,6 +12,10 @@ export const menu = [
   },
   {
     title: "Icons",
-    items: [{ title: "Getting started", file: "/icons" }],
+    items: [
+      { title: "Using icons", file: "/icons/using-icons" },
+      { title: "Functional icons", file: "/icons/functional" },
+      { title: "Illustrative icons", file: "/icons/illustrative" },
+    ],
   },
 ];
