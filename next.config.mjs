@@ -4,7 +4,10 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 
 /** @type {import('next').NextConfig} */
-const nextConfig = { pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"] };
+const nextConfig = {
+  output: "export",
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+};
 
 const withMDX = createMDX({
   options: {
