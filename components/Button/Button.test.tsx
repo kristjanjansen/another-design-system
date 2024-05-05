@@ -4,13 +4,25 @@ import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 
 import { Button } from "./Button";
+import { IconUserSm } from "../../icons";
 
 describe("Button", () => {
   test("renders without errors", async () => {
     render(<Button>Click me</Button>);
     const button = screen.getByRole("button") as HTMLButtonElement;
     expect(button).toBeInTheDocument();
-    expect(button).toHaveTextContent("Click me");
+    expect(button).toHaveAccessibleName("Click me");
+  });
+
+  test("has accessible name with having icon only", async () => {
+    render(
+      <Button isIcon tooltipLabel="Self-service">
+        <IconUserSm aria-hidden="true" />
+      </Button>
+    );
+    const button = screen.getByRole("button") as HTMLButtonElement;
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveAccessibleName("Click me");
   });
 
   test("handles clicks", async () => {
