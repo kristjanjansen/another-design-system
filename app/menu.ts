@@ -10,4 +10,8 @@ export const menu = [
       { title: "Text", file: "/components/text" },
     ],
   },
+  {
+    title: "Icons",
+    items: [{ title: "Getting started", file: "/icons" }],
+  },
 ];

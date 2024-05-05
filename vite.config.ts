@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     outDir: "./dist",
     lib: {
-      entry: ["./components/index.ts"],
+      entry: ["./components/index.ts", "./icons/index.ts"],
       formats: ["es"],
     },
     rollupOptions: {

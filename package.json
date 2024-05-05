@@ -13,6 +13,9 @@
     },
     "./style.css": {
       "import": "./dist/style.css"
+    },
+    "./Icons": {
+      "import": "./dist/index2.css"
     }
   },
   "scripts": {
