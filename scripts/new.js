@@ -18,7 +18,7 @@ const ${name} = () => {
 };
 
 ${name}.displayName = "${name}";
-export { ${name} };`;
+export default ${name};`;
 
   await write(`./components/${name}/${name}.tsx`, componentTemplate);
 
@@ -34,7 +34,7 @@ export { ${name} };`;
 import { describe, test, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import { ${name} } from "./${name}";
+import ${name} from "./${name}";
 
 describe("${name}", () => {
   test("renders without errors", async () => {
@@ -51,9 +51,9 @@ describe("${name}", () => {
 
   let indexTs = await read("./components/index.ts");
 
-  const entry = `export { ${name} } from "./${name}/${name}";`;
+  const entry = `export { default as ${name} } from "./${name}/${name}";`;
   indexTs = indexTs.replace(entry, "");
-  indexTs = indexTs + entry;
+  indexTs = indexTs + "\n" + entry;
 
   await write(`./components/index.ts`, indexTs);
 
