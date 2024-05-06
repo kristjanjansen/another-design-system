@@ -1,7 +1,7 @@
 import Link from "next/link";
 import menu from "./menu.json" assert { type: "json" };
 
-import "../styles/globals.css";
+import "./globals.css";
 import "../styles/vars.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {

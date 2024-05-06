@@ -71,6 +71,10 @@ import { ${name} } from 'another-design-system'
 
 ## Basic example
 
+\`\`\`jsx
+<${name}/>
+\`\`\`
+
 <${name}/>
 `;
 
