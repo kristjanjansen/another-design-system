@@ -25,10 +25,6 @@
       {
         "title": "Text",
         "path": "/components/text"
-      },
-      {
-        "title": "Hello",
-        "path": "/components/hello"
       }
     ]
   },
