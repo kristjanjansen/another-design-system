@@ -18,10 +18,6 @@ export interface StackProps {
   children: React.ReactNode;
 }
 
-const Stack2: React.FC<StackProps> = () => {
-  return <div>Hello</div>;
-};
-
 const Stack: React.FC<StackProps> = ({
   direction = {
     xsmall: "column",
@@ -56,4 +52,4 @@ const Stack: React.FC<StackProps> = ({
 
 Stack.displayName = "Stack";
 
-export { Stack };
+export default Stack;

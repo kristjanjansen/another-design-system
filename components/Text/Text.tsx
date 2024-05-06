@@ -5,7 +5,7 @@ import { MarginProps, TextProps } from "../../types/types";
 
 import styles from "./Text.module.scss";
 
-export const Text: React.FC<MarginProps & TextProps> = ({
+const Text: React.FC<MarginProps & TextProps> = ({
   variant = "p",
   size = "default",
   italic = false,
@@ -48,3 +48,5 @@ export const Text: React.FC<MarginProps & TextProps> = ({
     </Component>
   );
 };
+
+export default Text;

@@ -98,6 +98,9 @@ import { ${name} } from 'another-design-system'
       title: name,
       path: `/components/${lowercaseName}`,
     });
+    updatedMenu[componentsIndex].items = updatedMenu[
+      componentsIndex
+    ].items.sort((a, b) => a.title.localeCompare(b.title));
   }
 
   writeJSON("./app/menu.json", updatedMenu);

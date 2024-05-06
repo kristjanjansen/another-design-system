@@ -26,7 +26,7 @@ function getDefaultTag(variant: string): string {
   }
 }
 
-export const Heading: React.FC<MarginProps & HeadingProps> = ({
+const Heading: React.FC<MarginProps & HeadingProps> = ({
   id,
   variant,
   as,
@@ -72,3 +72,5 @@ export const Heading: React.FC<MarginProps & HeadingProps> = ({
     </Component>
   );
 };
+
+export default Heading;

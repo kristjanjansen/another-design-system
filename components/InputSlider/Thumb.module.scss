@@ -1,0 +1,49 @@
+@use '../../utils/mixins' as *;
+
+.thumb {
+    @include transform-all(0.1s, background-color);
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: var(--eds-spacing-small-4);
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, calc(-50% + 2px)) !important;
+    border-radius: var(--eds-radius-full);
+    background: var(--eds-colour-action-bg-accent-default);
+    box-shadow: 0px 1px 8px 0px rgba(66, 66, 66, 0.12),
+        0px 1px 3px 0px rgba(66, 66, 66, 0.12);
+    cursor: pointer;
+
+    &__icon {
+        @include transform-all(0.1s);
+        width: 16px;
+        height: 16px;
+        fill: var(--eds-colour-static-icon-on-accent-main);
+    }
+
+    &:hover {
+        background: var(--eds-colour-action-bg-accent-hover);
+
+        .thumb__icon {
+            fill: var(--eds-colour-static-icon-on-accent-alternative);
+        }
+    }
+
+    &--dragging {
+        background: var(--eds-colour-action-bg-accent-active) !important;
+
+        .thumb__icon {
+            fill: var(--eds-colour-static-icon-on-accent-main) !important;
+        }
+    }
+
+    &--focused {
+        @include focus-ring-small;
+        background: var(--eds-colour-action-bg-accent-focus);
+
+        .thumb__icon {
+            fill: var(--eds-colour-static-icon-on-accent-alternative);
+        }
+    }
+}

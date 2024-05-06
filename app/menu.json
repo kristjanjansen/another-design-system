@@ -11,6 +11,10 @@
         "path": "/components/heading"
       },
       {
+        "title": "InputSlider",
+        "path": "/components/inputslider"
+      },
+      {
         "title": "Label",
         "path": "/components/label"
       },
@@ -42,6 +46,15 @@
       {
         "title": "Illustrative icons",
         "path": "/icons/illustrative"
+      }
+    ]
+  },
+  {
+    "title": "Development",
+    "items": [
+      {
+        "title": "Creating components",
+        "path": "/dev/creating-components"
       }
     ]
   }

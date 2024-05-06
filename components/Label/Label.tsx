@@ -4,7 +4,7 @@ import { LabelProps } from "../../types/types";
 
 import styles from "./Label.module.scss";
 
-export const Label: React.FC<LabelProps> = ({
+const Label: React.FC<LabelProps> = ({
   id,
   size = "default",
   children,
@@ -30,3 +30,5 @@ export const Label: React.FC<LabelProps> = ({
     </label>
   );
 };
+
+export default Label;
