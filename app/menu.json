@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Components",
+    "items": [
+      {
+        "title": "Button",
+        "path": "/components/button"
+      },
+      {
+        "title": "Heading",
+        "path": "/components/heading"
+      },
+      {
+        "title": "Label",
+        "path": "/components/label"
+      },
+      {
+        "title": "Stack",
+        "path": "/components/stack"
+      },
+      {
+        "title": "Switch",
+        "path": "/components/switch"
+      },
+      {
+        "title": "Text",
+        "path": "/components/text"
+      },
+      {
+        "title": "Hello",
+        "path": "/components/hello"
+      }
+    ]
+  },
+  {
+    "title": "Icons",
+    "items": [
+      {
+        "title": "Using icons",
+        "path": "/icons/using-icons"
+      },
+      {
+        "title": "Functional icons",
+        "path": "/icons/functional"
+      },
+      {
+        "title": "Illustrative icons",
+        "path": "/icons/illustrative"
+      }
+    ]
+  }
+]

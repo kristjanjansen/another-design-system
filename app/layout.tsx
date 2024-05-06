@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { menu } from "./menu";
+import menu from "./menu.json" assert { type: "json" };
 
 import "../styles/globals.css";
 import "../styles/vars.css";
@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </h2>
                   <div className="mb-8 flex flex-col gap-2">
                     {section.items.map((item, j) => (
-                      <Link key={j} href={item.file} className="block">
+                      <Link key={j} href={item.path} className="block">
                         {item.title}
                       </Link>
                     ))}

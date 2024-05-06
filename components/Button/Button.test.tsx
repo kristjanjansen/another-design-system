@@ -4,7 +4,6 @@ import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 
 import { Button } from "./Button";
-import { IconUserSm } from "../../icons";
 
 describe("Button", () => {
   test("renders without errors", async () => {

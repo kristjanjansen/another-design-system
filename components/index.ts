@@ -6,3 +6,4 @@ export { Label } from "./Label/Label";
 export { Stack } from "./Stack/Stack";
 export { Switch } from "./Switch/Switch";
 export { Text } from "./Text/Text";
+export { Hello } from "./Hello/Hello";
