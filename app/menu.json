@@ -61,8 +61,8 @@
     "title": "Development",
     "items": [
       {
-        "title": "Creating components",
-        "path": "/dev/creating-components"
+        "title": "Command reference",
+        "path": "/dev/command-reference"
       }
     ]
   }
