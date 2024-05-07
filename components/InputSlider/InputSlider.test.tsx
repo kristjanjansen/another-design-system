@@ -7,7 +7,7 @@ import InputSlider from "./InputSlider";
 describe("InputSlider", () => {
   test("renders without errors", async () => {
     render(<InputSlider />);
-    const el = screen.getByText("Hello") as HTMLDivElement;
+    const el = screen.getByRole("slider") as HTMLInputElement;
     expect(el).toBeInTheDocument();
   });
 });

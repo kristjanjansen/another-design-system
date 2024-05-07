@@ -12,9 +12,11 @@ import { useToggleState } from "react-stately";
 import { mergeProps, useObjectRef } from "@react-aria/utils";
 import classNames from "classnames";
 
-import { Stack } from "..";
+import Stack from "../Stack/Stack";
+import Label from "../Label/Label";
+import Text from "../Text/Text";
+
 import { DescriptionSeverity } from "../../types/types";
-import { Label, Text } from "..";
 
 import styles from "./Switch.module.scss";
 

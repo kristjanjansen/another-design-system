@@ -5,16 +5,19 @@ import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), preserveDirectives(), dts({ rollupTypes: true })],
+  plugins: [react(), dts({ rollupTypes: true }), preserveDirectives()],
   build: {
     outDir: "./dist",
     lib: {
-      entry: ["./components/index.ts", "./icons/index.ts"],
+      entry: ["./components/index.ts"],
       formats: ["es"],
     },
     rollupOptions: {
       external: ["react", "react-dom"],
-      output: { chunkFileNames: "[name].js" },
+      output: {
+        chunkFileNames: "[name].js",
+        assetFileNames: "styles[extname]",
+      },
     },
   },
 });

@@ -1,0 +1,96 @@
+@use '../../utils/mixins' as *;
+
+.accordion {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+    border-radius: var(--eds-radius-main);
+
+    &__header {
+        color: var(--eds-colour-action-text-on-basic-headline-default);
+    }
+
+    &__button {
+        @include transform-all(0.1s);
+        width: 100%;
+        position: relative;
+        padding: var(--eds-spacing-medium-2) var(--eds-spacing-medium-4)
+            var(--eds-spacing-medium-2) var(--eds-spacing-medium-2);
+        gap: var(--eds-spacing-small-4);
+        display: flex;
+        background-color: var(--eds-colour-action-bg-basic-main-default);
+        border-radius: var(--eds-radius-main);
+        text-align: left;
+
+        @media all and (max-width: 767px) {
+            padding: var(--eds-spacing-medium-1) var(--eds-spacing-medium-2)
+                var(--eds-spacing-medium-1) var(--eds-spacing-small-5);
+        }
+
+        &:hover {
+            background-color: var(--eds-colour-action-bg-basic-main-hover);
+            color: var(--eds-colour-action-text-on-basic-headline-hover);
+        }
+
+        &:active {
+            background-color: var(--eds-colour-action-bg-basic-main-active);
+            color: var(--eds-colour-action-text-on-basic-headline-active);
+        }
+
+        &:focus {
+            background-color: var(--eds-colour-action-bg-basic-main-focus);
+            color: var(--eds-colour-action-text-on-basic-headline-focus);
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        &--open {
+            border-radius: var(--eds-radius-main) var(--eds-radius-main) 0 0;
+            border-bottom: none;
+        }
+
+        &--focused {
+            @include focus-ring-inset-large;
+        }
+    }
+
+    &__icon {
+        @include transform-all(0.1s);
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &--rotate {
+            transform: rotateX(180deg);
+        }
+
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    &__panel {
+        border-top: none;
+        background-color: var(--eds-colour-static-bg-basic-main);
+        border-radius: 0 0 var(--eds-radius-main) var(--eds-radius-main);
+        overflow: hidden;
+        transition: height ease 0.2s;
+
+        &--closed {
+            border-bottom: none;
+        }
+    }
+
+    &__panel-wrapper {
+        padding: var(--eds-spacing-medium-1) var(--eds-spacing-medium-4)
+            var(--eds-spacing-medium-4) var(--eds-spacing-large-1);
+
+        @media all and (max-width: 767px) {
+            padding: var(--eds-spacing-small-5) var(--eds-spacing-medium-2)
+                var(--eds-spacing-medium-2) var(--eds-spacing-medium-7);
+        }
+    }
+    
+}

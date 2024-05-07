@@ -3,8 +3,14 @@
     "title": "Components",
     "items": [
       {
+        "title": "Accordion",
+        "path": "/components/accordion",
+        "client": true
+      },
+      {
         "title": "Button",
-        "path": "/components/button"
+        "path": "/components/button",
+        "client": true
       },
       {
         "title": "Heading",
@@ -12,7 +18,8 @@
       },
       {
         "title": "InputSlider",
-        "path": "/components/inputslider"
+        "path": "/components/inputslider",
+        "client": true
       },
       {
         "title": "Label",
@@ -24,7 +31,12 @@
       },
       {
         "title": "Switch",
-        "path": "/components/switch"
+        "path": "/components/switch",
+        "client": true
+      },
+      {
+        "title": "Test",
+        "path": "/components/test"
       },
       {
         "title": "Text",

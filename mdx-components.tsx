@@ -17,7 +17,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     p: ({ children }) => <p className="mb-4 text-neutral-600">{children}</p>,
     pre: ({ children }) => (
-      <pre className="overflow-scroll my-4 bg-gray-100 rounded-lg p-4">
+      <pre className="overflow-scroll mt-4 mb-8 bg-gray-100 rounded-lg p-4">
         {children}
       </pre>
     ),

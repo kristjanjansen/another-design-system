@@ -11,8 +11,8 @@ import { useSliderState } from "react-stately";
 import classNames from "classnames";
 
 import type { DescriptionSeverity } from "../../types/types";
-import { Label } from "..";
-import { Text } from "..";
+import Label from "../Label/Label";
+import Text from "../Text/Text";
 
 import Thumb from "./Thumb";
 

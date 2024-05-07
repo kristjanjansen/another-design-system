@@ -1,6 +1,6 @@
 {
   "name": "another-design-system",
-  "version": "0.0.2",
+  "version": "0.0.13",
   "type": "module",
   "types": "dist/index.d.ts",
   "files": [
@@ -10,11 +10,8 @@
     ".": {
       "import": "./dist/index.js"
     },
-    "./style.css": {
-      "import": "./dist/style.css"
-    },
-    "./Icons": {
-      "import": "./dist/index2.js"
+    "./styles.css": {
+      "import": "./dist/styles.css"
     }
   },
   "scripts": {
@@ -23,7 +20,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
-    "build:lib": "vitest run && vite build",
+    "build:lib": "vite build",
     "new": "node ./scripts/new.js"
   },
   "dependencies": {

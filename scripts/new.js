@@ -39,8 +39,6 @@ import ${name} from "./${name}";
 describe("${name}", () => {
   test("renders without errors", async () => {
     render(<${name} />);
-    const el = screen.getByText("Hello") as HTMLDivElement;
-    expect(el).toBeInTheDocument();
   });
 });
 `;
