@@ -22,7 +22,7 @@
     "test": "vitest",
     "build:lib": "vite build",
     "new": "node ./scripts/new.js",
-    "publish": "vitest run && npm run build:lib && npm version patch && npm publish"
+    "release": "vitest run && npm run build:lib && npm version patch && npm publish"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
