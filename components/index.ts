@@ -10,3 +10,4 @@ export { default as Switch } from "./Switch/Switch";
 export { default as Text } from "./Text/Text";
 export { default as InputSlider } from "./InputSlider/InputSlider";
 export { default as Accordion } from "./Accordion/Accordion";
+export { default as AccordionGroup } from "./AccordionGroup/AccordionGroup";
