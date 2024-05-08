@@ -1,6 +1,10 @@
 {
-  "name": "another-design-system",
-  "version": "0.0.18",
+  "name": "@enefit/eds",
+  "version": "0.0.2",
+  "description": "EDS is an React design system library based on Vite library mode for building, NextJS MDX for documentation, Shiki for highlighting and Vitest for testing.",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "type": "module",
   "types": "dist/index.d.ts",
   "files": [
