@@ -17,3 +17,7 @@ return default function Page() {
     return <Text>Hello World</Text>
 }
 ```
+
+## Image sources
+
+[Avatar](https://unsplash.com/photos/a-man-wearing-glasses-and-a-black-shirt-iEEBWgY_6lA)
