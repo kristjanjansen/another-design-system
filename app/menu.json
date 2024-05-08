@@ -30,6 +30,10 @@
         "path": "/components/label"
       },
       {
+        "title": "Link",
+        "path": "/components/link"
+      },
+      {
         "title": "Stack",
         "path": "/components/stack"
       },

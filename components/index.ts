@@ -14,3 +14,4 @@ export { default as AccordionGroup } from "./AccordionGroup/AccordionGroup";
 
 
 export { default as Avatar } from "./Avatar/Avatar";
+export { default as Link } from "./Link/Link";
