@@ -8,6 +8,10 @@
         "client": true
       },
       {
+        "title": "Avatar",
+        "path": "/components/avatar"
+      },
+      {
         "title": "Button",
         "path": "/components/button",
         "client": true

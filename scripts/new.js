@@ -70,10 +70,10 @@ import { ${name} } from 'another-design-system'
 ## Basic example
 
 \`\`\`jsx
-<${name}/>
+<${name} />
 \`\`\`
 
-<${name}/>
+<${name} />
 `;
 
   await mkdir(`./app/components/${lowercaseName}`);
