@@ -11,28 +11,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="grid grid-cols-[250px_auto] gap-8 h-screen">
           <div className="border-r border-gray-200 p-8 text-neutral-500">
             <Link href="/">
-              <h1 className="font-bold text-xl mb-2">
-                Another
-                <br />
-                Design
-                <br />
-                System
-              </h1>
+              <h1 className="font-bold text-3xl mb-4">EDS</h1>
             </Link>
-            <div className="flex gap-2 mb-8">
-              <Link
-                href="https://github.com/kristjanjansen/another-design-system"
-                target="_blank"
-              >
-                Github
-              </Link>
-              <Link
-                href="https://www.npmjs.com/another-design-system"
-                target="_blank"
-              >
-                npm
-              </Link>
-            </div>
             <div>
               {menu.map((section, i) => (
                 <>

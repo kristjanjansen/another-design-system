@@ -64,7 +64,7 @@ describe("${name}", () => {
 ## Import
 
 \`\`\`jsx
-import { ${name} } from 'another-design-system'
+import { ${name} } from '@enefit/eds'
 \`\`\`
 
 ## Basic example
