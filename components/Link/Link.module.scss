@@ -1,0 +1,50 @@
+@use '../../utils/mixins' as *;
+
+.link {
+    &:focus-visible {
+        outline: none;
+    }
+
+    &__text {
+        display: inline-flex;
+        align-items: center;
+        color: var(--eds-colour-action-text-link-default);
+        border-bottom: 1px solid transparent;
+        line-height: 1.2;
+
+        &:hover {
+            color: var(--eds-colour-action-text-link-hover);
+            text-decoration: underline;
+        }
+
+        &:focus {
+            color: var(--eds-colour-action-text-link-focus);
+            text-decoration: underline;
+        }
+
+        &:active {
+            color: var(--eds-colour-action-text-link-active);
+            text-decoration: underline;
+        }
+
+        svg {
+            margin-top: 2px;
+        }
+    }
+
+    &--sm {
+        font-size: 0.9rem;
+    }
+
+    &--md {
+        font-size: 1rem;
+    }
+
+    &--lg {
+        font-size: 1.1rem;
+    }
+}
+
+.focus-ring {
+    @include focus-ring-small;
+}
