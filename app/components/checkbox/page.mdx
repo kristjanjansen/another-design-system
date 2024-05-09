@@ -1,0 +1,104 @@
+import { Checkbox } from "../../../components"
+
+# Checkbox
+
+## Import
+
+```jsx
+import { Checkbox } from '@enefit/eds'
+```
+
+## Basic example
+
+```jsx
+<Checkbox>Label</Checkbox>
+```
+
+<Checkbox>Label</Checkbox>
+
+## Description
+
+```jsx
+<Checkbox description="Description text here">
+    Checkbox with description
+</Checkbox>
+```
+
+{<Checkbox description="Description text here">
+Checkbox with description
+
+</Checkbox>}
+
+## Description severity
+
+```ts
+type DescriptionSeverity = 'regular' | 'warning';
+```
+
+## Regular(default)
+
+```jsx
+<Checkbox description="Description text here">Checkbox with warning</Checkbox>
+```
+
+{<Checkbox description="Description text here">
+Checkbox with warning
+
+</Checkbox>}
+
+## Warning
+
+```jsx
+<Checkbox description="Description text here" descriptionSeverity="warning">
+    Checkbox with warning
+</Checkbox>
+```
+
+{<Checkbox description="Description text here" descriptionSeverity='warning'>
+Checkbox with warning
+
+</Checkbox>}
+
+## Invalid
+
+Error message will only be rendered when `isInvalid === true`
+
+```jsx
+<Checkbox
+    description="Description text here"
+    errorMessage="Error message"
+    isInvalid
+>
+    Checkbox with error
+</Checkbox>
+```
+
+{<Checkbox description="Description text here" errorMessage="Error message" isInvalid>
+Checkbox with error
+
+</Checkbox>}
+
+## Long label
+
+```jsx
+<Checkbox description="Description text here">
+    Long text example goes on the second row like this
+</Checkbox>
+```
+
+{<div className='max-w-[18rem]'><Checkbox description="Description text here">
+Long text example goes on the second row like this
+
+</Checkbox></div>}
+
+## Suffix
+
+```jsx
+<Checkbox suffix='(optional)'>Label</Checkbox>
+
+<Checkbox description="Description text here" suffix='(optional)'>
+    Long text example goes on the second row like this
+</Checkbox>
+```
+
+{<Checkbox suffix='(optional)'>Label</Checkbox>}
