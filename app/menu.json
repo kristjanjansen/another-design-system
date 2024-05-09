@@ -17,6 +17,10 @@
         "client": true
       },
       {
+        "title": "Checkbox",
+        "path": "/components/checkbox"
+      },
+      {
         "title": "Heading",
         "path": "/components/heading"
       },
