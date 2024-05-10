@@ -21,10 +21,6 @@
         "path": "/components/checkbox"
       },
       {
-        "title": "Fantasy",
-        "path": "/components/fantasy"
-      },
-      {
         "title": "Heading",
         "path": "/components/heading"
       },
