@@ -21,6 +21,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </pre>
     ),
+    a: ({ children, href }) => (
+      <a href={href} className="underline underline-offset-2" target="_blank">
+        {children}
+      </a>
+    ),
 
     ...components,
   };

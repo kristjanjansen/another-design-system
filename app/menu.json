@@ -69,8 +69,8 @@
     "title": "Development",
     "items": [
       {
-        "title": "Command reference",
-        "path": "/dev/command-reference"
+        "title": "Development guide",
+        "path": "/dev/guide"
       }
     ]
   }

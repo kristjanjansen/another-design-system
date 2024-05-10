@@ -1,12 +1,26 @@
-# Installation
+# Getting started
 
-## Install the package
+## Setting up tokens
 
-Add this to `.npmrc`:
+First, create a Personal Access Token (classic) in GitHub: [https://github.com/settings/tokens](https://github.com/settings/tokens)
+
+Then, create a `.npmrc` file in your home directory (often referenced as `~/.npmrc`) with the following content:
 
 ```bash
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN_HERE
 @enefit:registry=https://npm.pkg.github.com
 ```
+
+If you do not want to edit `~/.npmrc` manually, you can also run the following command:
+
+```sh
+npm login --registry=https://npm.pkg.github.com --scope=@enefit
+```
+Username: YOUR_GITHUB_USERNAME_HERE
+
+Password: YOUR_GITHUB_TOKEN_HERE
+
+## Installation
 
 Then, install the package in your project:
 
@@ -14,17 +28,17 @@ Then, install the package in your project:
 npm install @enefit/eds
 ```
 
-## Set up the styles
+## Setting up styles
 
-Then import the styles in your main layout file:
+First, import the styles in your main layout file:
 
 ```ts
 import '@enefit/eds/styles.css';
 ```
 
-## Use the components
+## Import components
 
-You can import the components you need in your files:
+Then you can import the components you need:
 
 ```ts
 import { Text } from '@enefit/eds'
@@ -32,4 +46,19 @@ import { Text } from '@enefit/eds'
 export default function Page() {
     return <Text>Hello world!</Text>
 }
+```
+
+## CI installation
+
+To make the library accesible to CI systems such as Clourflare or Digital Ocean, create a `.npmrc` file in your project root with the following content:
+
+```bash
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+@enefit:registry=https://npm.pkg.github.com
+```
+
+Then add the token to your environment configuration:
+
+```bash
+GITHUB_TOKEN=YOUR_GITHUB_TOKEN_HERE
 ```
