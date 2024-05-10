@@ -1,0 +1,48 @@
+.icon {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+
+    &--white {
+        color: var(--shade-00);
+    }
+
+    &--primary {
+        color: var(--primary-500);
+    }
+
+    &--xs {
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+
+    &--sm {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+
+    &--md {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &--lg {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    &--xl {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    &--2xl {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    &--3xl {
+        width: 9rem;
+        height: 9rem;
+    }
+}

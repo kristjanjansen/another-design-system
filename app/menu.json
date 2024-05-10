@@ -49,6 +49,10 @@
       {
         "title": "Text",
         "path": "/components/text"
+      },
+      {
+        "title": "Textfield",
+        "path": "/components/textfield"
       }
     ]
   },
