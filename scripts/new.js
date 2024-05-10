@@ -13,8 +13,8 @@ if (name) {
 
 import "./${name}.module.scss";
 
-const ${name} = () => {
-  return <div>${name}</div>    
+const ${name} = (props) => {
+  return <div {...props}>${name}</div>    
 };
 
 ${name}.displayName = "${name}";
@@ -38,12 +38,17 @@ import ${name} from "./${name}";
 
 describe("${name}", () => {
   test("renders without errors", async () => {
-    render(<${name} />);
+    // data-testid requires {...props} passed to the component
+    // If it is not passed, the test will fail
+    // You can replace "test()" with "test.skip()" to skip the test
+    render(<${name} data-testid="${lowercaseName}">${name}</${name}>);
+    const el = screen.getByTestId("${lowercaseName}") as HTMLElement;
+    expect(el).toBeInTheDocument();
   });
 });
 `;
 
-  await write(`./components/${name}/${name}.test.tsx`, testTemplate);
+  await write(`./components/${name}/${name}.new.test.tsx`, testTemplate);
 
   // Update component index
 

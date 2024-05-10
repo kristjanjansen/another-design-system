@@ -11,8 +11,6 @@ export { default as Text } from "./Text/Text";
 export { default as InputSlider } from "./InputSlider/InputSlider";
 export { default as Accordion } from "./Accordion/Accordion";
 export { default as AccordionGroup } from "./AccordionGroup/AccordionGroup";
-
-
 export { default as Avatar } from "./Avatar/Avatar";
 export { default as Link } from "./Link/Link";
 export { default as Checkbox } from "./Checkbox/Checkbox";
