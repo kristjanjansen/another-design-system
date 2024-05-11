@@ -1,3 +1,3 @@
-Avatar
-
-- default export
+- Avatar default export
+- Banner default export
+- Container default export

@@ -16,6 +16,10 @@
         "path": "/components/avatar"
       },
       {
+        "title": "Banner",
+        "path": "/components/banner"
+      },
+      {
         "title": "Button",
         "path": "/components/button",
         "client": true
@@ -23,6 +27,10 @@
       {
         "title": "Checkbox",
         "path": "/components/checkbox"
+      },
+      {
+        "title": "Container",
+        "path": "/components/container"
       },
       {
         "title": "Heading",

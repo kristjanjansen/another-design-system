@@ -2,19 +2,21 @@
 
 # Define the list of directories to copy, each on a new line for readability
 directories=(
+  "Banner"
+  "Container"
   "Accordion"
   "AccordionGroup"
+  "Autocomplete"
   "Avatar"
   "Button"
   "Checkbox"
   "CheckboxGroup"
   "InputSlider"
   "Link"
+  "Popover"
+  "SelectListBox"
   "Switch"
   "Textfield"
-  "SelectListBox"
-  "Popover"
-  "Autocomplete"
 )
 
 # Loop over each directory

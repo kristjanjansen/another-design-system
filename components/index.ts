@@ -19,3 +19,5 @@ export { default as Textfield } from "./Textfield/Textfield";
 export { default as SelectListBox } from "./SelectListBox/SelectListBox";
 export { default as Popover } from "./Popover/Popover";
 export { default as Autocomplete } from "./Autocomplete/Autocomplete";
+export { default as Banner } from "./Banner/Banner";
+export { default as Container } from "./Container/Container";
