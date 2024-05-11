@@ -1,8 +1,15 @@
-import { mkdir, read, write, readJSON, writeJSON } from "../utils/utils.js";
+import {
+  mkdir,
+  read,
+  write,
+  readJSON,
+  writeJSON,
+  exists,
+} from "../utils/utils.js";
 
 const name = process.argv[2];
 
-if (name) {
+export async function createNew(name, updateIndexes = true) {
   const lowercaseName = name.toLowerCase();
 
   await mkdir(`./components/${name}`);
@@ -51,15 +58,15 @@ describe("${name}", () => {
   await write(`./components/${name}/${name}.new.test.tsx`, testTemplate);
 
   // Update component index
+  if (updateIndexes) {
+    let indexTs = await read("./components/index.ts");
 
-  let indexTs = await read("./components/index.ts");
+    const entry = `export { default as ${name} } from "./${name}/${name}";`;
+    indexTs = indexTs.replace(entry, "");
+    indexTs = indexTs + "\n" + entry;
 
-  const entry = `export { default as ${name} } from "./${name}/${name}";`;
-  indexTs = indexTs.replace(entry, "");
-  indexTs = indexTs + "\n" + entry;
-
-  await write(`./components/index.ts`, indexTs);
-
+    await write(`./components/index.ts`, indexTs);
+  }
   // Create docs page
 
   const docsTemplate = `import { ${name} } from "../../../components"
@@ -81,32 +88,42 @@ import { ${name} } from '@enefit/eds'
 <${name} />
 `;
 
-  await mkdir(`./app/components/${lowercaseName}`);
-  await write(`./app/components/${lowercaseName}/page.mdx`, docsTemplate);
+  const ifExists = await exists(`./app/components/${lowercaseName}/page.mdx`);
+
+  if (!ifExists) {
+    await mkdir(`./app/components/${lowercaseName}`);
+    await write(`./app/components/${lowercaseName}/page.mdx`, docsTemplate);
+  }
 
   // Update menu
 
-  const menu = await readJSON("./app/menu.json");
+  if (updateIndexes) {
+    const menu = await readJSON("./app/menu.json");
 
-  const updatedMenu = menu;
-  const componentsIndex = updatedMenu.findIndex(
-    (item) => item.title === "Components"
-  );
-  const duplicate = updatedMenu[componentsIndex].items.find(
-    (item) => item.title === name
-  );
+    const updatedMenu = menu;
+    const componentsIndex = updatedMenu.findIndex(
+      (item) => item.title === "Components"
+    );
+    const duplicate = updatedMenu[componentsIndex].items.find(
+      (item) => item.title === name
+    );
 
-  if (!duplicate) {
-    updatedMenu[componentsIndex].items.push({
-      title: name,
-      path: `/components/${lowercaseName}`,
-    });
-    updatedMenu[componentsIndex].items = updatedMenu[
-      componentsIndex
-    ].items.sort((a, b) => a.title.localeCompare(b.title));
+    if (!duplicate) {
+      updatedMenu[componentsIndex].items.push({
+        title: name,
+        path: `/components/${lowercaseName}`,
+      });
+      updatedMenu[componentsIndex].items = updatedMenu[
+        componentsIndex
+      ].items.sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    writeJSON("./app/menu.json", updatedMenu);
   }
+}
 
-  writeJSON("./app/menu.json", updatedMenu);
+if (name) {
+  createNew(name);
 } else {
   console.log(`\nUsage: node ./scripts/new.js Component\n`);
 }
