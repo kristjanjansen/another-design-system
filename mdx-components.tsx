@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
+import { Item } from "react-stately";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -27,7 +28,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </a>
     ),
+    // eslint-disable-next-line jsx-a11y/alt-text
     Image: (props) => <Image {...props} />,
+    Item: (props) => <Item {...props} />,
     ...components,
   };
 }

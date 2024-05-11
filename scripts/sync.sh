@@ -12,6 +12,9 @@ directories=(
   "Link"
   "Switch"
   "Textfield"
+  "SelectListBox"
+  "Popover"
+  "Autocomplete"
 )
 
 # Loop over each directory

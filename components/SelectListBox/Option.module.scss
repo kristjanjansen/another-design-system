@@ -1,0 +1,86 @@
+@use '../_variables/_mixins.scss' as *;
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: var(--eds-spacing-small-2);
+    padding: var(--eds-spacing-small-5) var(--eds-spacing-small-5)
+        var(--eds-spacing-small-5) var(--eds-spacing-medium-1);
+    outline: none;
+
+    &__icon {
+        flex-shrink: 0;
+        color: var(--eds-colour-static-icon-on-basic-accent);
+        width: 24px;
+        height: 24px;
+        align-self: flex-start;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
+        padding: var(--eds-spacing-small-1) var(--eds-spacing-small-2)
+            var(--eds-spacing-small-1) var(--eds-spacing-none);
+        color: var(--eds-colour-action-text-on-basic-default);
+    }
+
+    &__description {
+        color: var(--eds-colour-static-text-on-basic-supportive);
+    }
+
+    &:hover {
+        background: var(--eds-colour-action-bg-basic-main-hover);
+        cursor: pointer;
+
+        .option__text {
+            color: var(--eds-colour-action-text-on-basic-hover);
+        }
+    }
+
+    &:first-child {
+        border-top-left-radius: var(--eds-radius-main);
+        border-top-right-radius: var(--eds-radius-main);
+    }
+
+    &:last-child {
+        border-bottom-left-radius: var(--eds-radius-main);
+        border-bottom-right-radius: var(--eds-radius-main);
+    }
+
+    &--pressed {
+        background: var(--eds-colour-action-bg-basic-main-active) !important;
+
+        .option__text {
+            color: var(--eds-colour-action-text-on-basic-active) !important;
+        }
+    }
+
+    &--selected {
+        background: var(--eds-colour-action-bg-basic-main-hover);
+
+        .option__text {
+            color: var(--eds-colour-action-text-on-basic-active);
+        }
+    }
+
+    &--focused {
+        @include focus-ring-inset-small;
+        background: var(--eds-colour-action-bg-basic-main-focus);
+
+        .option__text {
+            color: var(--eds-colour-action-text-on-basic-focus) !important;
+        }
+    }
+}
+
+.option + .option {
+    border-top: var(--eds-stroke-divider-main) solid
+        var(--eds-colour-static-stroke-on-basic-divider);
+    // compensate for border
+    padding-top: calc(var(--eds-spacing-small-5) - 1px);
+}

@@ -8,6 +8,10 @@
         "client": true
       },
       {
+        "title": "Autocomplete",
+        "path": "/components/autocomplete"
+      },
+      {
         "title": "Avatar",
         "path": "/components/avatar"
       },
@@ -36,6 +40,14 @@
       {
         "title": "Link",
         "path": "/components/link"
+      },
+      {
+        "title": "Popover",
+        "path": "/components/popover"
+      },
+      {
+        "title": "SelectListBox",
+        "path": "/components/selectlistbox"
       },
       {
         "title": "Stack",
