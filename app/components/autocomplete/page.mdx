@@ -1,4 +1,5 @@
 import { Autocomplete } from "../../../components"
+import AutocompleteExampleBasic from "./AutocompleteExampleBasic"
 
 # Autocomplete
 
@@ -6,22 +7,29 @@ import { Autocomplete } from "../../../components"
 
 ```jsx
 import { Autocomplete } from '@enefit/eds'
+import { Item } from "react-stately";
 ```
 
 ## Basic example
 
 ```jsx
 <Autocomplete
-    label="Address"
-    placeholder="Enter full address"
-    clearButtonAriaLabel="clear field"
+    label="Choose a country"
+    defaultItems={[
+    {
+        key: "et",
+        name: "Estonia",
+    },
+    {
+        key: "lv",
+        name: "Latvia",
+    },
+    ]}
+    placeholder="Enter a country name"
+    clearButtonAriaLabel="Clear field"
 >
+    {(item) => <Item key={item.key}>{item.name}</Item>}
 </Autocomplete>
 ```
 
-<Autocomplete
-    label="Address"
-    placeholder="Enter full address"
-    clearButtonAriaLabel="clear field"
->
-</Autocomplete>
+<AutocompleteExampleBasic />
