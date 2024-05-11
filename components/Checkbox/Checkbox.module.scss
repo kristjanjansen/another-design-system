@@ -1,4 +1,4 @@
-@use '../../utils/mixins' as *;
+@use '../_variables/_mixins.scss' as *;
 
 .checkbox {
     display: flex;
@@ -25,8 +25,8 @@
 
     &__icon {
         @include transform-all(0.1s);
-        width: 24px;
-        height: 24px;
+        width: 16px;
+        height: 16px;
         opacity: 0;
         color: var(--eds-colour-action-icon-accent-default);
     }
@@ -44,6 +44,8 @@
     }
 
     &:hover {
+        cursor: pointer;
+
         .checkbox__indicator {
             border: var(--eds-stroke-divider-strong) solid
                 var(--eds-colour-action-stroke-form-hover);
@@ -51,7 +53,7 @@
         }
     }
 
-    &--pressed {
+    &:active {
         .checkbox__indicator {
             background: var(--eds-colour-static-bg-accent-main) !important;
             border-color: var(--eds-colour-static-bg-accent-main) !important;

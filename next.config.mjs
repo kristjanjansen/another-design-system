@@ -7,6 +7,7 @@ import rehypeSlug from "rehype-slug";
 const nextConfig = {
   output: "export",
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  images: { unoptimized: true },
 };
 
 const withMDX = createMDX({

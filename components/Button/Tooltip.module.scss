@@ -1,4 +1,4 @@
-@use '../../utils/mixins' as *;
+@use '../_variables/_mixins.scss' as *;
 
 .tooltip {
     @include transform-all(0.1s);

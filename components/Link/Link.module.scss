@@ -1,47 +1,26 @@
-@use '../../utils/mixins' as *;
+@use '../_variables/_mixins.scss' as *;
 
 .link {
-    &:focus-visible {
-        outline: none;
+    @include transform-all(0.1s);
+    display: inline-flex;
+    align-items: center;
+    color: var(--eds-colour-action-text-link-default);
+    border-radius: var(--eds-radius-small); // For focus ring
+    outline: none;
+
+    &:hover {
+        color: var(--eds-colour-action-text-link-hover);
+        text-decoration: underline;
     }
 
-    &__text {
-        display: inline-flex;
-        align-items: center;
-        color: var(--eds-colour-action-text-link-default);
-        border-bottom: 1px solid transparent;
-        line-height: 1.2;
-
-        &:hover {
-            color: var(--eds-colour-action-text-link-hover);
-            text-decoration: underline;
-        }
-
-        &:focus {
-            color: var(--eds-colour-action-text-link-focus);
-            text-decoration: underline;
-        }
-
-        &:active {
-            color: var(--eds-colour-action-text-link-active);
-            text-decoration: underline;
-        }
-
-        svg {
-            margin-top: 2px;
-        }
+    &:focus {
+        color: var(--eds-colour-action-text-link-focus);
+        text-decoration: underline;
     }
 
-    &--sm {
-        font-size: 0.9rem;
-    }
-
-    &--md {
-        font-size: 1rem;
-    }
-
-    &--lg {
-        font-size: 1.1rem;
+    &:active {
+        color: var(--eds-colour-action-text-link-active);
+        text-decoration: underline;
     }
 }
 
