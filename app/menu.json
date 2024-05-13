@@ -20,6 +20,10 @@
         "path": "/components/banner"
       },
       {
+        "title": "Breadcrumbs",
+        "path": "/components/breadcrumbs"
+      },
+      {
         "title": "Button",
         "path": "/components/button",
         "client": true

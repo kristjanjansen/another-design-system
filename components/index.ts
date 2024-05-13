@@ -21,3 +21,5 @@ export { default as Popover } from "./Popover/Popover";
 export { default as Autocomplete } from "./Autocomplete/Autocomplete";
 export { default as Banner } from "./Banner/Banner";
 export { default as Container } from "./Container/Container";
+export { default as Breadcrumbs } from "./Breadcrumbs/Breadcrumbs";
+export { default as BreadcrumbItem } from "./Breadcrumbs/BreadcrumbItem";

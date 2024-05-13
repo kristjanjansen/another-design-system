@@ -1,0 +1,62 @@
+@use '../_variables/_mixins.scss' as *;
+
+.breadcrumbs {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.breadcrumb-item {
+    &:focus-visible {
+        outline: none;
+    }
+
+    &--focused {
+        .breadcrumb-item__link {
+            @include focus-ring-small;
+        }
+    }
+
+    &__link {
+        color: var(--primary-500);
+        white-space: nowrap;
+
+        &:hover {
+            color: var(--primary-600);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &__separator {
+        color: var(--neutral-border);
+        margin-left: 0.4rem;
+        margin-right: 1rem;
+    }
+
+    &--current {
+        .breadcrumb-item__link {
+            color: var(--secondary-300);
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &--disabled {
+        .breadcrumb-item__link {
+            color: var(--secondary-200);
+            cursor: not-allowed;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

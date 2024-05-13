@@ -17,6 +17,7 @@ directories=(
   "SelectListBox"
   "Switch"
   "Textfield"
+  "Breadcrumbs"
 )
 
 # Loop over each directory
