@@ -1,0 +1,7 @@
+.base {
+    color: var(--eds-colour-static-text-on-basic-body);
+
+    &.grow {
+        flex-grow: 1;
+    }
+}

@@ -48,7 +48,7 @@ describe("${name}", () => {
 });
 `;
 
-  await write(`./components/${name}/${name}.new.test.tsx`, testTemplate);
+  await write(`./components/${name}/${name}.test.tsx`, testTemplate);
 
   // Update component index
 

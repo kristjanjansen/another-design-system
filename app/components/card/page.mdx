@@ -1,0 +1,68 @@
+import { Card, CardMedia, CardContent, CardHeader, CardBody, CardText, CardFooter, CardActions, CardInfo, CardTag, Link, Stack } from "../../../components"
+
+# Card
+
+## Import
+
+```jsx
+import { 
+    Card, 
+    CardMedia, 
+    CardContent, 
+    CardHeader, 
+    CardBody, 
+    CardText, 
+    CardFooter, 
+    CardActions, 
+    CardInfo, 
+    CardTag, 
+    Link, 
+    Stack 
+} from "@enefit/eds"
+```
+
+## Basic example
+
+```jsx
+<Card>
+    <CardMedia imageUrl="/bg.jpg" title="Solar" />
+    <CardContent>
+        <CardHeader
+            date="01.01.1070"
+            title="Card title that is actually a bit longer than usual"
+        >
+            <CardTag>Sample tag</CardTag>
+        </CardHeader>
+        <CardBody>
+            <CardText text="Card description that is actually even a bit longer as usual. Card description that is actually even a bit longer as usual." />
+        </CardBody>
+        <CardFooter>
+            <CardActions>
+                <Link href="https://google.com">Learn more</Link>
+            </CardActions>
+        </CardFooter>
+    </CardContent>
+    <CardInfo text="Some more information" />
+</Card>
+```
+
+<Card>
+    <CardMedia imageUrl="/bg.jpg" title="Solar" />
+    <CardContent>
+        <CardHeader
+            date="01.01.1070"
+            title="Card title that is actually a bit longer than usual"
+        >
+            <CardTag>Sample tag</CardTag>
+        </CardHeader>
+        <CardBody>
+            <CardText text="Card description that is actually even a bit longer as usual. Card description that is actually even a bit longer as usual." />
+        </CardBody>
+        <CardFooter>
+            <CardActions>
+                <Link href="https://google.com">Learn more</Link>
+            </CardActions>
+        </CardFooter>
+    </CardContent>
+    <CardInfo text="Some more information" />
+</Card>

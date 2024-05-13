@@ -18,6 +18,8 @@ directories=(
   "Switch"
   "Textfield"
   "Breadcrumbs"
+  "Card"
+  "CardIcon"
 )
 
 # Loop over each directory

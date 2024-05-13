@@ -29,6 +29,14 @@
         "client": true
       },
       {
+        "title": "Card",
+        "path": "/components/card"
+      },
+      {
+        "title": "CardIcon",
+        "path": "/components/cardicon"
+      },
+      {
         "title": "Checkbox",
         "path": "/components/checkbox"
       },
