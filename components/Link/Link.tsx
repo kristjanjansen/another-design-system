@@ -1,5 +1,4 @@
-"use client";
-
+'use client';
 import React, { forwardRef, ReactNode, useRef } from 'react';
 import { AriaLinkOptions, mergeProps, useFocusRing, useLink } from 'react-aria';
 import { useObjectRef } from '@react-aria/utils';
@@ -12,25 +11,19 @@ export interface LinkProps extends AriaLinkOptions {
     children?: ReactNode;
     href?: string;
     target?: string;
-    size?: 'sm' | 'md' | 'lg';
 }
 
 const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
     const forwardedRef = useObjectRef(ref);
     const fallbackRef = useRef(null);
     const linkRef = forwardedRef || fallbackRef;
-    const { className, children, href, target, size = 'md' } = props;
+    const { className, children, href, target } = props;
     const { linkProps } = useLink(props, linkRef);
     const { focusProps, isFocusVisible } = useFocusRing();
 
-    const classList = classNames(
-        styles.link,
-        styles[`link--${size}`],
-        className,
-        {
-            [styles[`focus-ring`]]: isFocusVisible,
-        }
-    );
+    const classList = classNames(styles.link, className, {
+        [styles[`focus-ring`]]: isFocusVisible,
+    });
 
     return (
         <a
@@ -40,7 +33,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
             href={href}
             target={target}
         >
-            <span className={styles.link__text}>{children}</span>
+            {children}
         </a>
     );
 });

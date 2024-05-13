@@ -1,9 +1,9 @@
-"use client";
-
-import React, { forwardRef, ReactNode, useRef } from 'react';
+'use client';
+import React, { forwardRef, ReactNode, useContext, useRef } from 'react';
 import {
     AriaCheckboxProps,
     useCheckbox,
+    useCheckboxGroupItem,
     useFocusRing,
     useId,
     VisuallyHidden,
@@ -12,137 +12,162 @@ import { useToggleState } from 'react-stately';
 import { mergeProps, useObjectRef } from '@react-aria/utils';
 import classNames from 'classnames';
 
-import { IconCheckSm } from '../../icons';
-import Stack from '../Stack/Stack';
-import type { DescriptionSeverity }  from '../../types/types';
-import Label from "../Label/Label";
-import Text from "../Text/Text";
+import { CheckboxGroupContext } from '../CheckboxGroup';
+import SvgTick from '../Icons/Tick';
+import { Stack } from '../Stack';
+import { Label, Text } from '../Typography';
 
 import styles from './Checkbox.module.scss';
 
 export interface CheckboxProps extends AriaCheckboxProps {
-  description?: string;
-  errorMessage?: string;
-  children: ReactNode;
-  descriptionSeverity?: DescriptionSeverity;
-  suffix?: string;
+    value?: string;
+    description?: string;
+    errorMessage?: string;
+    children: ReactNode;
+    descriptionSeverity?: 'regular' | 'warning';
+    suffix?: string;
+    link?: ReactNode;
+    infoHint?: ReactNode;
 }
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
-  const {
-      errorMessage: customErrorMessage,
-      description,
-      children,
-      descriptionSeverity = 'regular',
-      suffix,
-      validationBehavior,
-  } = props;
+    const {
+        value,
+        errorMessage: customErrorMessage,
+        description,
+        children,
+        descriptionSeverity = 'regular',
+        suffix,
+        validationBehavior,
+        link,
+        infoHint,
+    } = props;
 
-  const forwardedRef = useObjectRef(ref);
-  const fallbackRef = useRef(null);
-  const checkboxRef = forwardedRef || fallbackRef;
+    const checkboxGroupState = useContext(CheckboxGroupContext);
+    const forwardedRef = useObjectRef(ref);
+    const checkboxRef = forwardedRef || useRef(null);
+    const standaloneState = useToggleState(props);
 
-  const state = useToggleState(props);
-  const {
-      inputProps,
-      labelProps,
-      isSelected,
-      isPressed,
-      isInvalid,
-      validationErrors,
-  } = useCheckbox(props, state, checkboxRef);
-  const { isFocusVisible, focusProps } = useFocusRing();
+    let inputProps, isSelected, isInvalid, validationErrors;
 
-  const errorId = useId();
-  const descriptionId = useId();
+    if (checkboxGroupState && value) {
+        ({ inputProps, isSelected, isInvalid, validationErrors } =
+            useCheckboxGroupItem(
+                { ...props, value },
+                checkboxGroupState,
+                checkboxRef
+            ));
+    } else {
+        ({ inputProps, isSelected, isInvalid, validationErrors } = useCheckbox(
+            props,
+            standaloneState,
+            checkboxRef
+        ));
+    }
 
-  const checkBoxclassList = classNames(styles.checkbox, {
-      [styles['checkbox--pressed']]: isPressed,
-      [styles['checkbox--selected']]: isSelected,
-      [styles['checkbox--focused']]: isFocusVisible,
-      [styles['checkbox--invalid']]: isInvalid,
-  });
+    const { isFocusVisible, focusProps } = useFocusRing();
 
-  const descriptionClassList = classNames({
-      [styles['messages__description--regular']]:
-          descriptionSeverity === 'regular',
-      [styles['messages__description--warning']]:
-          descriptionSeverity === 'warning',
-  });
+    const errorId = useId();
+    const descriptionId = useId();
 
-  // Allow only native error messages with native validation behaviour
-  const errorMessage =
-      validationBehavior === 'native'
-          ? validationErrors.join(' ')
-          : customErrorMessage;
+    const checkBoxclassList = classNames(styles.checkbox, {
+        [styles['checkbox--selected']]: isSelected,
+        [styles['checkbox--focused']]: isFocusVisible,
+        [styles['checkbox--invalid']]: isInvalid,
+    });
 
-  const hasMessages = errorMessage || description;
+    const descriptionClassList = classNames({
+        [styles['messages__description--regular']]:
+            descriptionSeverity === 'regular',
+        [styles['messages__description--warning']]:
+            descriptionSeverity === 'warning',
+    });
 
-  // Remove aria-describedby from react-aria props and concat with internal id's to keep it usable
-  const { 'aria-describedby': ariaDescribedBy, ...restInputProps } =
-      inputProps;
+    // Allow only native error messages with native validation behaviour
+    const errorMessage =
+        validationBehavior === 'native'
+            ? validationErrors.join(' ')
+            : customErrorMessage;
 
-  return (
-      <Stack>
-          <Label className={checkBoxclassList} {...labelProps}>
-              <VisuallyHidden>
-                  <input
-                      {...mergeProps(restInputProps, focusProps)}
-                      ref={checkboxRef}
-                      // Keep this order of message id's so higher priority messages get read out first
-                      aria-describedby={`${errorId} ${descriptionId} ${ariaDescribedBy}`}
-                  />
-              </VisuallyHidden>
+    const hasMessages = errorMessage || description;
 
-              <span className={styles.checkbox__indicator} aria-hidden="true"><IconCheckSm className={styles.checkbox__icon}/></span>
+    // Remove aria-describedby from react-aria props and concat with internal id's to keep it usable
+    const { 'aria-describedby': ariaDescribedBy, ...restInputProps } =
+        inputProps;
 
-              <div className={styles.checkbox__label}>
-                  {children}
-                  {suffix && (
-                      <>
-                          <span
-                              className={styles['checkbox__suffix-separator']}
-                          ></span>
-                          <Text
-                              variant="line"
-                              italic
-                              size="small"
-                              className={styles.checkbox__suffix}
-                          >
-                              {suffix}
-                          </Text>
-                      </>
-                  )}
-              </div>
-          </Label>
-
-          {hasMessages && (
-              <div className={styles.messages}>
-                  {/* Show error message only when isInvalid */}
-                  {errorMessage && isInvalid && (
-                      <Text
-                          variant="line"
-                          size="small"
-                          id={errorId}
-                          className={styles.messages__error}
-                      >
-                          {errorMessage}
-                      </Text>
-                  )}
-                  {description && (
-                      <Text
-                          variant="line"
-                          size="small"
-                          id={descriptionId}
-                          className={descriptionClassList}
-                      >
-                          {description}
-                      </Text>
-                  )}
-              </div>
-          )}
-      </Stack>
-  );
+    return (
+        <Stack>
+            <Label className={checkBoxclassList}>
+                <VisuallyHidden>
+                    <input
+                        {...mergeProps(restInputProps, focusProps)}
+                        ref={checkboxRef}
+                        aria-describedby={`${errorId} ${descriptionId} ${ariaDescribedBy}`}
+                    />
+                </VisuallyHidden>
+                <span className={styles.checkbox__indicator} aria-hidden="true">
+                    <SvgTick className={styles.checkbox__icon} />
+                </span>
+                <div className="flex gap-2">
+                    <div className={styles.checkbox__label}>
+                        {children}
+                        {suffix && (
+                            <>
+                                <span
+                                    className={
+                                        styles['checkbox__suffix-separator']
+                                    }
+                                ></span>
+                                <Text
+                                    variant="line"
+                                    italic
+                                    size="small"
+                                    className={styles.checkbox__suffix}
+                                >
+                                    {suffix}
+                                </Text>
+                            </>
+                        )}
+                        {link && (
+                            <>
+                                <span
+                                    className={
+                                        styles['checkbox__suffix-separator']
+                                    }
+                                ></span>
+                                {link}
+                            </>
+                        )}
+                    </div>
+                    {infoHint}
+                </div>
+            </Label>
+            {hasMessages && (
+                <div className={styles.messages}>
+                    {isInvalid && errorMessage && (
+                        <Text
+                            variant="line"
+                            size="small"
+                            id={errorId}
+                            className={styles.messages__error}
+                        >
+                            {errorMessage}
+                        </Text>
+                    )}
+                    {description && (
+                        <Text
+                            variant="line"
+                            size="small"
+                            id={descriptionId}
+                            className={descriptionClassList}
+                        >
+                            {description}
+                        </Text>
+                    )}
+                </div>
+            )}
+        </Stack>
+    );
 });
 
 Checkbox.displayName = 'Checkbox';

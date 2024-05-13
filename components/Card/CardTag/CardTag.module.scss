@@ -1,0 +1,35 @@
+@use '../../_variables/_mixins.scss' as *;
+
+.base {
+    @include transform-all(0.1s);
+    display: inline-flex;
+    align-items: center;
+    padding: var(--eds-spacing-small-2) var(--eds-spacing-small-3);
+    border-radius: var(--eds-radius-small);
+    background: var(--eds-colour-action-bg-basic-alternative-default);
+    box-shadow: none;
+    border: none;
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:hover {
+        background: var(--eds-colour-action-bg-basic-alternative-hover);
+        color: var(--eds-colour-action-text-on-basic-hover);
+    }
+
+    &:focus {
+        background: var(--eds-colour-action-bg-basic-alternative-focus);
+        color: var(--eds-colour-action-text-on-basic-focus);
+    }
+
+    &:active {
+        background: var(--eds-colour-action-bg-basic-alternative-active);
+        color: var(--eds-colour-action-text-on-basic-active);
+    }
+
+    &.focus-ring {
+        @include focus-ring-large;
+    }
+}

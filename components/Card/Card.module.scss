@@ -1,0 +1,9 @@
+.base {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--eds-radius-main);
+    background: var(--eds-colour-static-bg-basic-main);
+    box-shadow: 0px 1px 3px 0px rgba(66, 66, 66, 0.12),
+        0px 1px 8px 0px rgba(66, 66, 66, 0.12);
+}

@@ -1,0 +1,28 @@
+.base {
+    max-width: var(--eds-grid-container-max-width);
+    margin: 0 var(--eds-grid-margin-bp-320-359);
+    box-sizing: border-box;
+
+    @media screen and (min-width: 360px) {
+        margin: 0 var(--eds-grid-margin-bp-360-767);
+    }
+
+    @media screen and (min-width: 768px) {
+        margin: 0 var(--eds-grid-margin-bp-768-1023);
+    }
+
+    @media screen and (min-width: 1024px) {
+        margin: 0 var(--eds-grid-margin-bp-1024-1151);
+    }
+
+    @media screen and (min-width: 1152px) {
+        margin: 0 var(--eds-grid-margin-bp-1152-1920);
+    }
+
+    @media screen and (min-width: 1680px) {
+        width: 100%;
+        padding: 0 var(--eds-grid-margin-bp-1152-1920); // to get spacing if container width less than 1416px
+        box-sizing: content-box;
+        margin: 0 auto;
+    }
+}

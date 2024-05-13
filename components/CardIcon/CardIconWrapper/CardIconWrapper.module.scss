@@ -1,0 +1,9 @@
+.base {
+    padding-bottom: var(--eds-spacing-small-4);
+
+    > svg {
+        width: 3rem;
+        height: 3rem;
+        color: var(--eds-colour-static-icon-on-basic-accent);
+    }
+}

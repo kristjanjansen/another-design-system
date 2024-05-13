@@ -8,8 +8,20 @@
         "client": true
       },
       {
+        "title": "Autocomplete",
+        "path": "/components/autocomplete"
+      },
+      {
         "title": "Avatar",
         "path": "/components/avatar"
+      },
+      {
+        "title": "Banner",
+        "path": "/components/banner"
+      },
+      {
+        "title": "Breadcrumbs",
+        "path": "/components/breadcrumbs"
       },
       {
         "title": "Button",
@@ -17,8 +29,20 @@
         "client": true
       },
       {
+        "title": "Card",
+        "path": "/components/card"
+      },
+      {
+        "title": "CardIcon",
+        "path": "/components/cardicon"
+      },
+      {
         "title": "Checkbox",
         "path": "/components/checkbox"
+      },
+      {
+        "title": "Container",
+        "path": "/components/container"
       },
       {
         "title": "Heading",
@@ -36,6 +60,14 @@
       {
         "title": "Link",
         "path": "/components/link"
+      },
+      {
+        "title": "Popover",
+        "path": "/components/popover"
+      },
+      {
+        "title": "SelectListBox",
+        "path": "/components/selectlistbox"
       },
       {
         "title": "Stack",

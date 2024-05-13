@@ -1,0 +1,10 @@
+.base {
+    color: var(--eds-colour-static-text-on-basic-headline);
+    display: flex;
+    flex-direction: column;
+    gap: var(--eds-spacing-small-4);
+}
+
+.date {
+    color: var(--eds-colour-static-text-on-basic-supportive);
+}

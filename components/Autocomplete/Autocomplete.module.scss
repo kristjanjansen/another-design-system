@@ -1,0 +1,135 @@
+@use '../_variables/_mixins.scss' as *;
+
+.base {
+    position: relative;
+}
+
+.label__container {
+    display: flex;
+    align-items: center;
+    gap: var(--eds-spacing-small-2);
+}
+
+.label {
+    padding: var(--eds-spacing-small-1) 0;
+    color: var(--eds-colour-static-text-on-basic-body);
+
+    &__suffix {
+        display: inline-flex;
+        // Compensate for smaller font-size
+        transform: translateY(-1px);
+        color: var(--eds-colour-static-text-on-basic-body);
+    }
+
+    &__suffix-separator {
+        display: inline-flex;
+        width: var(--eds-spacing-small-2);
+    }
+}
+
+.textfield {
+    @include transform-all(0.1s);
+    display: flex;
+    gap: var(--eds-spacing-small-2);
+    border-radius: var(--eds-radius-main);
+    border: var(--eds-stroke-divider-strong) solid
+        var(--eds-colour-action-stroke-form-default);
+    background: var(--eds-colour-action-bg-form-default);
+    overflow: hidden;
+
+    &:hover {
+        border-color: var(--eds-colour-action-stroke-form-hover);
+        background: var(--eds-colour-action-bg-form-hover);
+    }
+
+    &:focus-within {
+        border-color: var(--eds-colour-action-stroke-form-active);
+        background: var(--eds-colour-action-bg-form-focus);
+    }
+
+    &__input {
+        width: 100%;
+        color: var(--eds-colour-static-text-on-basic-highlighted);
+        // concat inner paddings and compensate for border
+        padding: calc(var(--eds-spacing-small-5) - 2px)
+            calc(var(--eds-spacing-small-5) + var(--eds-spacing-small-2) - 2px);
+        outline: none;
+
+        &::placeholder {
+            color: var(--eds-colour-static-text-on-basic-supportive);
+        }
+
+        &:autofill,
+        &:autofill:hover,
+        &:autofill:focus {
+            box-shadow: 0 0 0px 1000px var(--eds-colour-action-bg-form-default)
+                inset;
+        }
+    }
+
+    &--invalid {
+        border-color: var(--eds-colour-static-stroke-alert-main);
+    }
+
+    &--focused {
+        @include focus-ring-small;
+        border-color: var(--eds-colour-action-stroke-form-focus) !important;
+    }
+
+    &--focus-within {
+        border-color: var(--eds-colour-action-stroke-form-default) !important;
+    }
+}
+
+.clear {
+    @include transform-all(0.1s);
+    width: 40px;
+    height: 40px;
+    margin: var(--eds-spacing-small-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--eds-colour-static-text-on-basic-body);
+    border-radius: var(--eds-radius-small);
+    outline: none;
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    &--focused {
+        @include focus-ring-inset-small;
+        background: var(--eds-colour-action-bg-basic-main-focus);
+    }
+}
+
+.popover {
+    border-radius: var(--eds-radius-main);
+    border: 1px solid var(--eds-colour-static-stroke-on-basic-container);
+    box-shadow: 0px 4px 24px 0px rgba(66, 66, 66, 0.16),
+        0px 8px 12px 0px rgba(66, 66, 66, 0.13);
+    background: var(--eds-colour-action-bg-basic-main-default);
+    width: 100%;
+    overflow: auto;
+    outline: none;
+}
+
+.messages {
+    &__description {
+        &--regular {
+            color: var(--eds-colour-static-text-on-basic-supportive);
+        }
+
+        &--warning {
+            color: var(--eds-colour-static-text-warning-body);
+        }
+    }
+
+    &__error {
+        color: var(--eds-colour-static-text-alert-body);
+    }
+}

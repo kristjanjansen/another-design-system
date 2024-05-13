@@ -1,0 +1,11 @@
+.base {
+    height: 216px;
+    background-color: var(--eds-colour-static-bg-basic-alternative);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media all and (min-width: 1024px) {
+        height: 256px;
+    }
+}

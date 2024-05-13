@@ -1,0 +1,26 @@
+.label__container {
+    display: flex;
+    align-items: center;
+    gap: var(--eds-spacing-small-2);
+}
+
+.label {
+    padding: var(--eds-spacing-small-1) 0;
+    color: var(--eds-colour-static-text-on-basic-body);
+
+    &__suffix {
+        display: inline-flex;
+        // Compensate for smaller font-size
+        transform: translateY(-1px);
+        color: var(--eds-colour-static-text-on-basic-body);
+    }
+
+    &__suffix-separator {
+        display: inline-flex;
+        width: var(--eds-spacing-small-2);
+    }
+}
+
+.message--error {
+    color: var(--eds-colour-static-text-alert-body);
+}

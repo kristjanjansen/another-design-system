@@ -1,0 +1,35 @@
+import { Autocomplete } from "../../../components"
+import AutocompleteExampleBasic from "./AutocompleteExampleBasic"
+
+# Autocomplete
+
+## Import
+
+```jsx
+import { Autocomplete } from '@enefit/eds'
+import { Item } from "react-stately";
+```
+
+## Basic example
+
+```jsx
+<Autocomplete
+    label="Choose a country"
+    defaultItems={[
+    {
+        key: "et",
+        name: "Estonia",
+    },
+    {
+        key: "lv",
+        name: "Latvia",
+    },
+    ]}
+    placeholder="Enter a country name"
+    clearButtonAriaLabel="Clear field"
+>
+    {(item) => <Item key={item.key}>{item.name}</Item>}
+</Autocomplete>
+```
+
+<AutocompleteExampleBasic />
