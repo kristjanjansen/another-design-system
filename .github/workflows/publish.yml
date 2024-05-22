@@ -16,11 +16,16 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: npm ci
       - id: prev_version
-        run: echo "::set-output name=version::$(git show HEAD^:package.json | jq -r .version)"
+        run: echo "version=$(git show HEAD^:package.json | jq -r .version)" >> $GITHUB_OUTPUT
       - id: curr_version
-        run: echo "::set-output name=version::$(cat package.json | jq -r .version)"
+        run: echo "version=$(cat package.json | jq -r .version)" >> $GITHUB_OUTPUT
       - id: version_check
-        run: echo "::set-output name=changed::$(if [ ${{ steps.prev_version.outputs.version }} != ${{ steps.curr_version.outputs.version }} ]; then echo true; else echo false; fi)"
+        run: |
+          if [ "${{ steps.prev_version.outputs.version }}" != "${{ steps.curr_version.outputs.version }}" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
       - if: steps.version_check.outputs.changed == 'true'
         run: npx vitest run
       - if: steps.version_check.outputs.changed == 'true'
