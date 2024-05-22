@@ -1,6 +1,6 @@
 {
   "name": "another-design-system",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "A React design system library based on Vite library mode for building, NextJS MDX for documentation, Shiki for highlighting and Vitest for testing.",
   "type": "module",
   "types": "dist/index.d.ts",
